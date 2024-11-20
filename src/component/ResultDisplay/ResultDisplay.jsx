@@ -30,6 +30,12 @@ function ResultDisplay({ result, copyToClipboard }) {
           <button className = "copy"onClick={() => copyToClipboard(result.hoursDuration)}>Copy</button>
         </div>
       )}
+      {result.minutes && (
+    <div className='result'>
+      <p>{result.minutes} minutes</p>
+      <button className="copy" onClick={() => copyToClipboard(result.minutes + ' minutes')}>Copy</button>
+    </div>
+  )}
     </div>
   );
 }

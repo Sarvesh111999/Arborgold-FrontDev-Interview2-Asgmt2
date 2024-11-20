@@ -85,6 +85,9 @@ button {
   margin-right: auto;
   margin-bottom: 8px;
 }
+.copy {
+  width: 20%;
+}
 
 .toggles div {
   margin: 10px;
@@ -99,6 +102,7 @@ button {
 
 .result p {
   font-size: 1.2rem;
+  font-weight: bold;
   background-color: #F7F9FC;
   color: black;
   height: 42px;
