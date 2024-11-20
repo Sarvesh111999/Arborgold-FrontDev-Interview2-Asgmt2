@@ -1,38 +1,302 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #00AA00;
+}
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  display: block;
+  font-size: 38px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin: 10px 0px
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  flex-direction: column;
+  color: #FFFFFF;
+  margin-bottom: 3px;
+}
+
+.date-inputs,
+.time-inputs {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.time-input input[type="time"]:focus {
+  background-color: #00AA00;
+  border: 2px solid #00AA00;
+  outline: none;
+  color: #333;
+}
+
+input[type="time"],
+input[type="date"],
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.time-input,
+.toggle {
+  width: 204px;
+  margin: 0px 6px 0px 6px;
+}
+
+button {
+  background: #EB5757;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 42px;
+  font-size: 16px;
+  padding: 0 10px;
+  width: 40%;
+}
+
+.calculator-button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+}
+
+.toggles div {
+  margin: 10px;
+}
+
+.error-message {
+  color: rgb(255 110 13);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+
+.result p {
+  font-size: 1.2rem;
+  background-color: #F7F9FC;
+  color: black;
+  height: 42px;
+  align-content: center;
+  padding: 0px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 26px;
+  border-radius: 50px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked+.slider {
+  background: #EB5757;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.switch label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.react-datepicker {
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+.react-datepicker__day.react-datepicker__day--keyboard-selected.react-datepicker__day--today {
+  border: 1px solid var(--primary-color);
+
+}
+
+.react-datepicker__day--keyboard-selected {
+  border: 1px solid var(--primary-color);
+}
+
+.react-datepicker__input-container {
+  background: #000036;
+
+}
+
+.react-time-picker.react-time-picker--closed.react-time-picker--enabled.custom-time-picker {
+  margin: 0px 6px;
+}
+
+.react-datepicker__header {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.react-datepicker__day--selected {
+  background-color: var(--primary-color);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom-datepicker-input {
+  height: 50px;
+  font-size: 16px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 4px;
+  background: #000036;
+  color: white;
+}
+
+.custom-time-picker {
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  background: #4c4c4c;
+}
+
+.custom-datepicker-input::placeholder {
+  color: rgb(245, 245, 245);
+  opacity: 1;
+}
+
+.custom-datepicker-input:focus::placeholder {
+  color: lightgray;
+}
+
+.react-time-picker__inputGroup__input {
+  height: 25px !important;
+  font-size: 12px !important;
+  padding: 0px 10px !important;
+  width: 32px !important;
+}
+
+.react-time-picker react-time-picker--closed.react-time-picker--enabled custom-time-picker {
+  background: #DCDCDC;
+}
+
+.react-time-picker__inputGroup__input.react-time-picker__inputGroup__hour {
+  height: 25px !important;
+  font-size: 12px !important;
+  padding: 0px 10px !important;
+  width: 32px !important;
+}
+
+.react-time-picker__inputGroup__input.react-time-picker__second {
+  height: 25px !important;
+  font-size: 12px !important;
+  padding: 0px 10px !important;
+  width: 32px !important;
+}
+
+.react-time-picker__inputGroup__input.react-time-picker__minute {
+  height: 25px !important;
+  font-size: 12px !important;
+  padding: 0px 10px !important;
+  width: 32px !important;
+}
+
+.react-time-picker__inputGroup__input.react-time-picker__inputGroup__amPm {
+  height: 29px !important;
+  font-size: 12px !important;
+  padding: 0px 4px !important;
+  width: 54px !important;
+}
+
+.react-time-picker__clear-button.react-time-picker__button {
+  height: 29px !important;
+  font-size: 12px !important;
+  padding: 0px 4px !important;
+  width: 54px !important;
+  margin-top: 10px !important;
+  background: #EB5757;
+  border: none;
+  border-radius: 5px
+}
+
+.react-time-picker__clock-button.react-time-picker__button {
+  height: 29px !important;
+  font-size: 12px !important;
+  padding: 0px 4px !important;
+  width: 54px !important;
+  margin-top: 10px !important;
+  background: #E5ECF6;
+
+  border: none;
+  border-radius: 5px
+}
+
+.react-time-picker__inputGroup__leadingZero {
+  display: none;
+}
+
+.App-Duration {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+
 }
